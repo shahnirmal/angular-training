@@ -1,0 +1,14 @@
+<label>weight</label> 
+<input type="text" [(ngModel)]="weight"/>
+<!-- <input type="text" [value]="weight" #widthTextBox (input)="setweight(widthTextBox.value)"/> -->
+
+<br/>
+<label>height</label> 
+<input type="text" [(ngModel)]="height"/>
+<!-- <input type="text" [value]="height" #heightTextBox (input)="setheight(heightTextBox.value)"/> -->
+
+<br/>
+
+<button (click)="calculateBMI()">calculate BMI</button>
+<br/>
+<label>your BMI is :</label> {{bmi}}

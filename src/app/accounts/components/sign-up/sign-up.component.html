@@ -1,0 +1,33 @@
+<form #signUpForm="ngForm" (ngSubmit)="signUp(signUpForm.form)">
+    <label>User name</label>
+    <input name="userName" type="text" [(ngModel)]="userName" #userNameControl="ngModel" required />
+    <div *ngIf="userNameControl.errors">
+        <div *ngIf="userNameControl.errors['required']">
+            userName is required
+        </div>
+    </div>
+    <br />
+
+    <label>password</label>
+    <input name="password" type="text" [(ngModel)]="password" #passwordControl="ngModel" required />
+    <div *ngIf="passwordControl.errors">
+        <div *ngIf="passwordControl.errors['required']">
+            password is required
+        </div>
+    </div>
+    <br />
+
+    <label>email</label>
+    <input name="email" type="text" [(ngModel)]="email" #emailControl="ngModel" required />
+    <div *ngIf="emailControl.errors">
+        <div *ngIf="emailControl.errors['required']">
+            email is required
+        </div>
+    </div>
+    <br />
+
+    <input type="submit" value="signup" formnovalidate />
+    <input type="button" value="Clear" (click)="clearData(signUpForm.form)" />
+
+    <br />
+</form>
