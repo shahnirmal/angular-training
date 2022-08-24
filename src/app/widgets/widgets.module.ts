@@ -6,6 +6,7 @@ import { bmiCalculatorComponent } from "./components/bmiCalculator/bmi-calculato
 import { timerComponent } from "./components/timer/timer.component";
 import { BmiCalculationContainerComponent } from './components/bmi-calculation-container/bmi-calculation-container.component';
 import { BmiCalculationHistoryComponent } from './components/bmi-calculation-history/bmi-calculation-history.component';
+import { CommonModule } from "@angular/common";
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { BmiCalculationHistoryComponent } from './components/bmi-calculation-his
         BmiCalculationContainerComponent
     ],
     imports:[
-        FormsModule
+        FormsModule,
+        CommonModule
     ]
 })
 

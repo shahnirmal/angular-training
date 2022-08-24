@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { bmiCalculationService } from 'src/app/Services/bmiCalculationService';
+import { bmiItemModel } from '../../models/bmiItem.model';
+import { BmiCalculationHistoryComponent } from '../bmi-calculation-history/bmi-calculation-history.component';
 
 @Component({
   selector: 'app-bmi-calculation-container',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BmiCalculationContainerComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('bmiHistory') bmiHistory : BmiCalculationHistoryComponent = new BmiCalculationHistoryComponent();
+  constructor(private bmiCalculationSvc : bmiCalculationService) { }
 
   ngOnInit(): void {
   }
 
+  onBmiresultCalculated(data: bmiItemModel) {
+    data.result = this.bmiCalculationSvc.calculate(data.weight,data.height);
+    this.bmiHistory.bmiHistoryArray.push(data);
+  }
 }

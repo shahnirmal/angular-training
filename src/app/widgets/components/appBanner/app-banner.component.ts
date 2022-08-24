@@ -6,10 +6,6 @@ import { AfterContentInit, Component } from "@angular/core";
     styleUrls:['./app-banner.component.css'],
 })
 
-export class appBanner implements AfterContentInit{
-    ngAfterContentInit()
-    {
-        console.log('ngAfterContentInit called');
-    }
+export class appBanner{
 
 }
